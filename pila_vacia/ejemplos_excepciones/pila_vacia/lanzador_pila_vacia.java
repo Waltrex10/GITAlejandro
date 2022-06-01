@@ -5,11 +5,11 @@ import java.util.EmptyStackException;
 public class lanzador_pila_vacia {
 
 	public Object pop(int tamano, Object[] vector) throws EmptyStackException {
-		int size = tamano; // Asignación arbitraria de tamaño para evitar errores
+		int size = tamano; // Asignaciï¿½n arbitraria de tamaï¿½o para evitar errores
 		Object obj;
 
 		if (size == 0)
-			// si la pila esta vacía se crea una instancia de la excepción
+			// si la pila esta vacï¿½a se crea una instancia de la excepciï¿½n
 			throw new EmptyStackException();
 			
 		// se desapila el elemento de la pila
@@ -20,7 +20,7 @@ public class lanzador_pila_vacia {
 		return obj; // se devuelve el elemento desapilado
 	}
 
-	// Añadido por mí
+	// Aï¿½adido por mï¿½
 	Object objectAt(int size, Object[] vector) {
 
 		Object pila[] = vector;

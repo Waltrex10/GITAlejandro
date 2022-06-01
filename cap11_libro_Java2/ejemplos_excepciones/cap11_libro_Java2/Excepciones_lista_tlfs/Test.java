@@ -1,22 +1,21 @@
 package ejemplos_excepciones.cap11_libro_Java2.Excepciones_lista_tlfs;
-import cap10.Banco.*;
 import java.io.*;
 
 /////////////////////////////////////////////////////////////////
-// Aplicación para trabajar con matrices de objetos
+// Aplicaciï¿½n para trabajar con matrices de objetos
 //
 public class Test
 {
-  public static int menú()
+  public static int menu()
   {
     System.out.print("\n\n");
     System.out.println("1. Buscar");
     System.out.println("2. Buscar siguiente");
-    System.out.println("3. Añadir");
+    System.out.println("3. Aï¿½adir");
     System.out.println("4. Eliminar");
     System.out.println("5. Salir");    
     System.out.println();
-    System.out.print("   Opción: ");
+    System.out.print("   Opciï¿½n: ");
     int op;
     do
       op = Leer.datoInt();
@@ -29,22 +28,22 @@ public class Test
     // Definir un flujo de caracteres de entrada: flujoE
     InputStreamReader isr = new InputStreamReader(System.in);
     BufferedReader flujoE = new BufferedReader(isr);
-    // Definir una referencia al flujo estándar de salida: flujoS
+    // Definir una referencia al flujo estï¿½ndar de salida: flujoS
     PrintStream flujoS = System.out;
 
-    // Crear un objeto lista de teléfonos vacío (con cero elementos)
+    // Crear un objeto lista de telï¿½fonos vacï¿½o (con cero elementos)
     CListaTfnos listatfnos = new CListaTfnos();
-    int opción = 0, pos = -1;
+    int opcion = 0, pos = -1;
     String cadenabuscar = null;
-    String nombre, dirección;
-    long teléfono;
+    String nombre, direccion;
+    long telefono;
     boolean eliminado = false;
     do
     {
       try
       {
-        opción = menú();
-        switch (opción)
+        opcion = menu();
+        switch (opcion)
         {
           case 1: // buscar
             flujoS.print("conjunto de caracteres a buscar ");
@@ -52,46 +51,46 @@ public class Test
             pos = listatfnos.buscar(cadenabuscar, 0);
             if (pos == -1)
               if (listatfnos.longitud() != 0)
-                flujoS.println("búsqueda fallida");
+                flujoS.println("bï¿½squeda fallida");
               else
-                flujoS.println("lista vacía");
+                flujoS.println("lista vacia");
             else
             {
               flujoS.println(listatfnos.valorEn(pos).obtenerNombre());
-              flujoS.println(listatfnos.valorEn(pos).obtenerDirección());
-              flujoS.println(listatfnos.valorEn(pos).obtenerTeléfono());
+              flujoS.println(listatfnos.valorEn(pos).obtenerDireccion());
+              flujoS.println(listatfnos.valorEn(pos).obtenerTelefono());
             }
             break;
           case 2: // buscar siguiente
             pos = listatfnos.buscar(cadenabuscar, pos + 1);
             if (pos == -1)
               if (listatfnos.longitud() != 0)
-                flujoS.println("búsqueda fallida");
+                flujoS.println("busqueda fallida");
               else
-                flujoS.println("lista vacía");
+                flujoS.println("lista vacï¿½a");
             else
             {
               flujoS.println(listatfnos.valorEn(pos).obtenerNombre());
-              flujoS.println(listatfnos.valorEn(pos).obtenerDirección());
-              flujoS.println(listatfnos.valorEn(pos).obtenerTeléfono());
+              flujoS.println(listatfnos.valorEn(pos).obtenerDireccion());
+              flujoS.println(listatfnos.valorEn(pos).obtenerTelefono());
             }
             break;
-         case 3: // añadir
+         case 3: // anadir
             flujoS.print("nombre:    "); nombre = flujoE.readLine();
-            flujoS.print("dirección: "); dirección = flujoE.readLine();
-            flujoS.print("teléfono:  "); teléfono = Leer.datoLong();
-            listatfnos.añadir(new CPersona(nombre, dirección, teléfono));
+            flujoS.print("direcciï¿½n: "); direccion = flujoE.readLine();
+            flujoS.print("telefono:  "); telefono = Leer.datoLong();
+            listatfnos.anadir(new CPersona(nombre, direccion, telefono));
             break;
           case 4: // eliminar
-            flujoS.print("teléfono: "); teléfono = Leer.datoLong();
-            eliminado = listatfnos.eliminar(teléfono);
+            flujoS.print("telï¿½fono: "); telefono = Leer.datoLong();
+            eliminado = listatfnos.eliminar(telefono);
             if (eliminado)
               flujoS.println("registro eliminado");
             else
               if (listatfnos.longitud() != 0)
-                flujoS.println("teléfono no encontrado");
+                flujoS.println("telï¿½fono no encontrado");
               else
-                flujoS.println("lista vacía");
+                flujoS.println("lista vacï¿½a");
             break;
           case 5: // salir
             listatfnos = null;
@@ -99,6 +98,6 @@ public class Test
       }
       catch (IOException ignorada) {}
     }
-    while(opción != 5);
+    while(opcion != 5);
   }
 }

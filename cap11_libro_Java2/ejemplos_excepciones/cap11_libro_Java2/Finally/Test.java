@@ -1,8 +1,7 @@
 package ejemplos_excepciones.cap11_libro_Java2.Finally;
-import cap10.Banco.*;
 import java.io.*;
 /////////////////////////////////////////////////////////////////
-// Aplicación para trabajar con la clase CBanco y la jerarquía
+// Aplicaciï¿½n para trabajar con la clase CBanco y la jerarquï¿½a
 // de clases derivadas de CCuenta
 //
 public class Test
@@ -17,7 +16,7 @@ public class Test
       for (int i = 0; i < banco.longitud(); i++)
       {
         cliente = banco.clienteEn(i);
-        lista.añadir(cliente.obtenerNombre(), i);
+        lista.anadir(cliente.obtenerNombre(), i);
       }
       // Abrir el fichero para escribir. Se crea el flujo fcli;
       fcli = new PrintWriter(new FileWriter(fich));
@@ -42,7 +41,7 @@ public class Test
     cuenta = Leer.dato();
     System.out.print("Saldo..................: ");
     saldo = Leer.datoDouble();
-    System.out.print("Tipo de interés........: ");
+    System.out.print("Tipo de interï¿½s........: ");
     tipoi = Leer.datoDouble();
     if (op == 1)
     {
@@ -54,7 +53,7 @@ public class Test
     {
       int transex;
       double imptrans;
-      System.out.print("Importe por transacción: ");
+      System.out.print("Importe por transacciï¿½n: ");
       imptrans = Leer.datoDouble();
       System.out.print("Transacciones exentas..: ");
       transex = Leer.datoInt();
@@ -68,20 +67,20 @@ public class Test
     return obj;
   }
   
-  public static int menú()
+  public static int menu()
   {
     System.out.print("\n\n");
     System.out.println("1. Saldo");
     System.out.println("2. Buscar siguiente");
     System.out.println("3. Ingreso");
     System.out.println("4. Reintegro");
-    System.out.println("5. Añadir");
+    System.out.println("5. Aï¿½adir");
     System.out.println("6. Eliminar");
     System.out.println("7. Mantenimiento");
     System.out.println("8. Escribir");    
     System.out.println("9. Salir");    
     System.out.println();
-    System.out.print("   Opción: ");
+    System.out.print("   Opciï¿½n: ");
     int op;
     do
       op = Leer.datoInt();
@@ -91,13 +90,13 @@ public class Test
   
   public static void main(String[] args)
   {
-    // Definir una referencia al flujo estándar de salida: flujoS
+    // Definir una referencia al flujo estï¿½ndar de salida: flujoS
     PrintStream flujoS = System.out;
     
-    // Crear un objeto banco vacío (con cero elementos)
+    // Crear un objeto banco vacï¿½o (con cero elementos)
     CBanco banco = new CBanco();
 
-    int opción = 0, pos = -1;
+    int opcion = 0, pos = -1;
     String cadenabuscar = null;
     String nombre, cuenta;
     double cantidad;
@@ -105,8 +104,8 @@ public class Test
 
     do
     {
-      opción = menú();
-      switch (opción)
+      opcion = menu();
+      switch (opcion)
       {
         case 1: // saldo
           flujoS.print("Nombre o cuenta, total o parcial ");
@@ -114,7 +113,7 @@ public class Test
           pos = banco.buscar(cadenabuscar, 0);
           if (pos == -1)
             if (banco.longitud() != 0)
-              flujoS.println("búsqueda fallida");
+              flujoS.println("bï¿½squeda fallida");
             else
               flujoS.println("no hay clientes");
           else
@@ -128,7 +127,7 @@ public class Test
           pos = banco.buscar(cadenabuscar, pos + 1);
           if (pos == -1)
             if (banco.longitud() != 0)
-              flujoS.println("búsqueda fallida");
+              flujoS.println("bï¿½squeda fallida");
             else
               flujoS.println("no hay clientes");
           else
@@ -144,24 +143,24 @@ public class Test
           pos = banco.buscar(cuenta, 0);
           if (pos == -1)
             if (banco.longitud() != 0)
-              flujoS.println("búsqueda fallida");
+              flujoS.println("bï¿½squeda fallida");
             else
               flujoS.println("no hay clientes");
           else
           {
             flujoS.print("Cantidad: "); cantidad = Leer.datoDouble();
-            if (opción == 3)
+            if (opcion == 3)
               banco.clienteEn(pos).ingreso(cantidad);
             else
               banco.clienteEn(pos).reintegro(cantidad);
           }
           break;
-       case 5: // añadir
+       case 5: // aï¿½adir
           flujoS.print("Tipo de cuenta: 1-(CA), 2-(CC), 3-CCI  ");
           do
-            opción = Leer.datoInt();
-          while (opción < 1 || opción > 3);
-          banco.añadir(leerDatos(opción));
+            opcion = Leer.datoInt();
+          while (opcion < 1 || opcion > 3);
+          banco.anadir(leerDatos(opcion));
           break;
         case 6: // eliminar
           flujoS.print("Cuenta: "); cuenta = Leer.dato();
@@ -196,7 +195,7 @@ public class Test
           banco = null;
       }
     }
-    while(opción != 8);
+    while(opcion != 8);
   }
 }
 /////////////////////////////////////////////////////////////////

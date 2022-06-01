@@ -11,8 +11,8 @@ public class CCuentaCorriente extends CCuenta
   private double importePorTrans;
   private int transExentas;
   
-  // Métodos
-  public CCuentaCorriente() {} // constructor sin parámetros
+  // Mï¿½todos
+  public CCuentaCorriente() {} // constructor sin parï¿½metros
   
   public CCuentaCorriente(String nom, String cue, double sal,
                           double tipo, double imptrans, int transex)
@@ -74,8 +74,8 @@ public class CCuentaCorriente extends CCuenta
   {
     // Se aplican mensualmente por el mantenimiento de la cuenta
     GregorianCalendar fechaActual = new GregorianCalendar();
-    int día = fechaActual.get(Calendar.DAY_OF_MONTH);
-    if (día == 1)
+    int dia = fechaActual.get(Calendar.DAY_OF_MONTH);
+    if (dia == 1)
     {
       int n = transacciones - transExentas;
       if (n > 0) reintegro(n * importePorTrans);
@@ -86,25 +86,25 @@ public class CCuentaCorriente extends CCuenta
   public double intereses()
   {
     GregorianCalendar fechaActual = new GregorianCalendar();
-    int día = fechaActual.get(Calendar.DAY_OF_MONTH);
+    int dia = fechaActual.get(Calendar.DAY_OF_MONTH);
   
-    if (día != 1) return 0.0;
+    if (dia != 1) return 0.0;
       
-    // Acumular los intereses por mes sólo los días 1 de cada mes
+    // Acumular los intereses por mes sï¿½lo los dï¿½as 1 de cada mes
     double interesesProducidos = 0.0;
-    // Hasta 3000 euros al 0.5%. El resto al interés establecido.
+    // Hasta 3000 euros al 0.5%. El resto al interï¿½s establecido.
     if (estado() <= 3000)
       interesesProducidos = estado() * 0.5 / 1200.0;
     else
     {
       interesesProducidos = 3000 * 0.5 / 1200.0 +
-           (estado() - 3000) * obtenerTipoDeInterés() / 1200.0;
+           (estado() - 3000) * obtenerTipoDeInteres() / 1200.0;
     }
     ingreso(interesesProducidos);
     // Este ingreso no debe incrementar las transacciones
     decrementarTransacciones(); 
     
-    // Devolver el interés mensual por si fuera necesario
+    // Devolver el interï¿½s mensual por si fuera necesario
     return interesesProducidos;
   }
 }

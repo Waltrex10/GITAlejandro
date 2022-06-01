@@ -1,19 +1,19 @@
-package ejemplos_excepciones.cap11_libro_Java2.Crear_excepcion;
+package ejemplos_excepciones.excepciones_propias;
 
 public class Test
 {
   public static void main(String[] args)
   {
     int x = 0;
-    CMiClase obj = new CMiClase();
+    ValoresNoValidos01 obj = new ValoresNoValidos01();
     try
     {
-      obj.m(x);
+      obj.valorCero(x);
     }
     catch (EValorNoValido e)
     {
       System.out.println(e.getMessage());
     }
-    System.out.println("Continúa la ejecución");
+    System.out.println("Continï¿½a la ejecuciï¿½n");
   }
 }

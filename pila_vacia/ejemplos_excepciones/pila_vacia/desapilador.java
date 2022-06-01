@@ -9,7 +9,7 @@ public class desapilador {
 		lanzador_pila_vacia lanzador = new lanzador_pila_vacia();
 		int size = 100;
 		
-		//Inicialización de la pila de objetos con objetos null
+		//Inicializaciï¿½n de la pila de objetos con objetos null
 		Object pila[] = new Object[size];
 		for(int i=0;i<100;i++) {
 			pila[i]=null;

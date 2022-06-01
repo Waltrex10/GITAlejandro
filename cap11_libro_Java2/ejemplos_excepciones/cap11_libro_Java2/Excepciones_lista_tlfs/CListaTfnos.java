@@ -1,12 +1,12 @@
 package ejemplos_excepciones.cap11_libro_Java2.Excepciones_lista_tlfs;
 
 /////////////////////////////////////////////////////////////////
-// Definición de la clase CListaTfnos.
+// Definiciï¿½n de la clase CListaTfnos.
 //
 public class CListaTfnos
 {
-  private CPersona[] listaTeléfonos; // matriz de objetos
-  private int nElementos; // número de elementos de la matriz
+  private CPersona[] listaTelefonos; // matriz de objetos
+  private int nElementos; // numero de elementos de la matriz
   
   private CPersona[] asignarMemoria(int nElementos)
   {
@@ -17,24 +17,24 @@ public class CListaTfnos
     catch (OutOfMemoryError e)
     {
       System.out.println(e.getMessage());
-      return listaTeléfonos;
+      return listaTelefonos;
     }
   }
   
   public CListaTfnos()
   {
-    // Crear una lista vacía
+    // Crear una lista vacï¿½a
     nElementos = 0;
-    listaTeléfonos = asignarMemoria(nElementos);
+    listaTelefonos = asignarMemoria(nElementos);
   }
   
-  private void unElementoMás(CPersona[] listaActual)
+  private void unElementoMes(CPersona[] listaActual)
   {
     nElementos = listaActual.length;
-    listaTeléfonos = asignarMemoria(nElementos + 1);
+    listaTelefonos = asignarMemoria(nElementos + 1);
     // Copiar la lista actual
     for ( int i = 0; i < nElementos; i++ )
-      listaTeléfonos[i] = listaActual[i];
+      listaTelefonos[i] = listaActual[i];
     nElementos++;
   }
   
@@ -43,49 +43,49 @@ public class CListaTfnos
     if (listaActual.length == 0) return;
     int k = 0;
     nElementos = listaActual.length;
-    listaTeléfonos = asignarMemoria(nElementos - 1);
+    listaTelefonos = asignarMemoria(nElementos - 1);
     // Copiar la lista actual
     for ( int i = 0; i < nElementos; i++ )
       if (listaActual[i] != null)
-        listaTeléfonos[k++] = listaActual[i];
+        listaTelefonos[k++] = listaActual[i];
     nElementos--;
   }
   
   public void ponerValorEn( int i, CPersona objeto )
   {
     if (i >= 0 && i < nElementos)
-      listaTeléfonos[i] = objeto;
+      listaTelefonos[i] = objeto;
     else
-      System.out.println("Índice fuera de límites");
+      System.out.println("ï¿½ndice fuera de lï¿½mites");
   }
   
   public CPersona valorEn( int i )
   {
     if (i >= 0 && i < nElementos)
-      return listaTeléfonos[i];
+      return listaTelefonos[i];
     else
     {
-      System.out.println("Índice fuera de límites");
+      System.out.println("ï¿½ndice fuera de lï¿½mites");
       return null;
     }
   }
   
   public int longitud() { return nElementos; }
   
-  public void añadir(CPersona obj)
+  public void anadir(CPersona obj)
   {
-    unElementoMás(listaTeléfonos);
+    unElementoMes(listaTelefonos);
     ponerValorEn( nElementos - 1, obj );
   }
   
   public boolean eliminar(long tel)
   {
-    // Buscar el teléfono y eliminar registro
+    // Buscar el telefono y eliminar registro
     for ( int i = 0; i < nElementos; i++ )
-      if (listaTeléfonos[i].obtenerTeléfono() == tel)
+      if (listaTelefonos[i].obtenerTelefono() == tel)
       {
-        listaTeléfonos[i] = null;
-        unElementoMenos(listaTeléfonos);
+        listaTelefonos[i] = null;
+        unElementoMenos(listaTelefonos);
         return true;
       }
     return false;
@@ -98,9 +98,9 @@ public class CListaTfnos
     if (pos < 0) pos = 0;
     for ( int i = pos; i < nElementos; i++ )
     {
-      nom = listaTeléfonos[i].obtenerNombre();
+      nom = listaTelefonos[i].obtenerNombre();
       if (nom == null) continue;
-      // ¿str está contenida en nom?
+      // estr este contenida en nom?
       if (nom.indexOf(str) > -1)
         return i;
     }

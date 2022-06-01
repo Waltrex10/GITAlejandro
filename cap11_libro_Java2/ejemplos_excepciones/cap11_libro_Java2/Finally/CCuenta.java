@@ -10,23 +10,23 @@ public abstract class CCuenta
   private String nombre;
   private String cuenta;
   private double saldo;
-  private double tipoDeInterés;
+  private double tipoDeInteres;
   
-  // Métodos
+  // Mï¿½todos
   public CCuenta() {};
   public CCuenta(String nom, String cue, double sal, double tipo)
   {
     asignarNombre(nom);
     asignarCuenta(cue);
     ingreso(sal);
-    asignarTipoDeInterés(tipo);
+    asignarTipoDeInteres(tipo);
   }
   
   public void asignarNombre(String nom)
   {
     if (nom.length() == 0)
     {
-      System.out.println("Error: cadena vacía");
+      System.out.println("Error: cadena vacï¿½a");
       return;
     }
     nombre = nom;
@@ -41,7 +41,7 @@ public abstract class CCuenta
   {
     if (cue.length() == 0)
     {
-      System.out.println("Error: cuenta no válida");
+      System.out.println("Error: cuenta no vï¿½lida");
       return;
     }
     cuenta = cue;
@@ -81,18 +81,18 @@ public abstract class CCuenta
     saldo -= cantidad;
   }
 
-  public void asignarTipoDeInterés(double tipo)
+  public void asignarTipoDeInteres(double tipo)
   {
     if (tipo < 0)
     {
-      System.out.println("Error: tipo no válido");
+      System.out.println("Error: tipo no vï¿½lido");
       return;
     }
-    tipoDeInterés = tipo;
+    tipoDeInteres = tipo;
   }
   
-  public double obtenerTipoDeInterés()
+  public double obtenerTipoDeInteres()
   {
-    return tipoDeInterés;
+    return tipoDeInteres;
   }
 }

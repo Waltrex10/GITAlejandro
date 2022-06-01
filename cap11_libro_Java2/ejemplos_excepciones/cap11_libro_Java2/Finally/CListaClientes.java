@@ -10,7 +10,7 @@ public class CListaClientes
     nElementos = n;
     listaClientes = new String[n];
   }
-  public void añadir(String nombre, int i)
+  public void anadir(String nombre, int i)
   {
     listaClientes[i] = nombre + "\n";
   }

@@ -8,10 +8,10 @@ import java.util.*;
 // se muestra uso de throws y uso de throw
 public class excepcion_02 {
 	public Object pop() throws EmptyStackException {
-		int size = 100; // Asignación arbitraria de tamaño para evitar errores
+		int size = 100; // Asignaciï¿½n arbitraria de tamaï¿½o para evitar errores
 		Object obj;
 		if (size == 0)
-			// si la pila esta vacía se crea una instancia de la excepción
+			// si la pila esta vacï¿½a se crea una instancia de la excepciï¿½n
 			throw new EmptyStackException();
 		// se desapila el elemento de la pila
 		obj = objectAt(size - 1);
@@ -20,7 +20,7 @@ public class excepcion_02 {
 		return obj; // se devuelve el elemento desapilado
 	}
 
-	// Añadido por mí
+	// Aï¿½adido por mï¿½
 	Object objectAt(int size) {
 
 		Object vector_objetos[] = new Object[size];

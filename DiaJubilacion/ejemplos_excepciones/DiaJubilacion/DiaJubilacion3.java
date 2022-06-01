@@ -28,17 +28,17 @@ public class DiaJubilacion3 {
 		int edad, dia, mes, anio, limite;
 
 		String cadenaFechaNacimiento;
-		String arrayDiaSemana[] = { "Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado" };
+		String arrayDiaSemana[] = { "Domingo", "Lunes", "Martes", "Miï¿½rcoles", "Jueves", "Viernes", "Sï¿½bado" };
 
 		Scanner sc = new Scanner(System.in);
-		System.out.print("Introduce una Fecha en formato dd/mm/yyyy (dia/mes/año): ");
+		System.out.print("Introduce una Fecha en formato dd/mm/yyyy (dia/mes/aï¿½o): ");
 		cadenaFechaNacimiento = sc.nextLine();
 		// System.out.println(cadenaFechaNacimiento);
 
 		String arrayFecha[] = cadenaFechaNacimiento.split("/");
 
 		if (cadenaFechaNacimiento.length() != 10) {
-			System.out.print("\nLa fecha introducida no es correcta ¡INTENTALO DE NUEVO! ");
+			System.out.print("\nLa fecha introducida no es correcta ï¿½INTENTALO DE NUEVO! ");
 		} else {
 			boolean res = validarFecha(cadenaFechaNacimiento);
 			if (res == true) {
@@ -48,27 +48,27 @@ public class DiaJubilacion3 {
 				fechaNacimiento.set(Calendar.YEAR, anio);
 				fechaNacimiento.set(Calendar.MONTH, mes - 1);
 				fechaNacimiento.set(Calendar.DATE, dia);
-				if (fechaNacimiento.before(fechaHoy)) { // Comprobamos que la fecha sea menor que el día de hoy.
-					fechaNacimiento.add(Calendar.YEAR, 65); // añadimos 65 años a la fecha de nacimiento.
-					if (fechaNacimiento.get(Calendar.DAY_OF_WEEK) == 1) {// Comprobamos si el día de jubilación es
+				if (fechaNacimiento.before(fechaHoy)) { // Comprobamos que la fecha sea menor que el dï¿½a de hoy.
+					fechaNacimiento.add(Calendar.YEAR, 65); // aï¿½adimos 65 aï¿½os a la fecha de nacimiento.
+					if (fechaNacimiento.get(Calendar.DAY_OF_WEEK) == 1) {// Comprobamos si el dï¿½a de jubilaciï¿½n es
 																			// Domingo
 						System.out.print(
-								"El día de su jubilación es el " + formatearFecha(fechaNacimiento) + ", pero como es ");
+								"El dï¿½a de su jubilaciï¿½n es el " + formatearFecha(fechaNacimiento) + ", pero como es ");
 						System.out.print(arrayDiaSemana[fechaNacimiento.get(Calendar.DAY_OF_WEEK) - 1]);
 						fechaNacimiento.add(Calendar.DAY_OF_YEAR, -2);
 						System.out.print(" se le adelanda al viernes " + formatearFecha(fechaNacimiento));
 
 					} else {
-						if (fechaNacimiento.get(Calendar.DAY_OF_WEEK) == 7) {// Comprobamos si el día de jubilación es
-																				// sábado.
-							System.out.print("El día de su jubilación es el " + formatearFecha(fechaNacimiento)
+						if (fechaNacimiento.get(Calendar.DAY_OF_WEEK) == 7) {// Comprobamos si el dï¿½a de jubilaciï¿½n es
+																				// sï¿½bado.
+							System.out.print("El dï¿½a de su jubilaciï¿½n es el " + formatearFecha(fechaNacimiento)
 									+ ", pero como es ");
 							System.out.print(arrayDiaSemana[fechaNacimiento.get(Calendar.DAY_OF_WEEK) - 1]);
 							fechaNacimiento.add(Calendar.DAY_OF_YEAR, -1);
 							System.out.print(" se le adelanda al viernes " + formatearFecha(fechaNacimiento));
 
 						} else {
-							System.out.print("El día de su jubilación es el " + formatearFecha(fechaNacimiento) + ": ");
+							System.out.print("El dï¿½a de su jubilaciï¿½n es el " + formatearFecha(fechaNacimiento) + ": ");
 							System.out.println(arrayDiaSemana[fechaNacimiento.get(Calendar.DAY_OF_WEEK) - 1]);
 						}
 
@@ -76,11 +76,11 @@ public class DiaJubilacion3 {
 
 				} else {
 					System.out.print(
-							"\nLa fecha introducida no es mayor que la fecha del día de hoy... ¡INTENTALO DE NUEVO! ");
+							"\nLa fecha introducida no es mayor que la fecha del dï¿½a de hoy... ï¿½INTENTALO DE NUEVO! ");
 				}
 			} else {
 
-				System.out.print("\nLa fecha introducida no es correcta ¡INTENTALO DE NUEVO! ");
+				System.out.print("\nLa fecha introducida no es correcta ï¿½INTENTALO DE NUEVO! ");
 
 			}
 		}

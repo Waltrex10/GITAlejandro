@@ -1,22 +1,22 @@
 package ejemplos_excepciones.cap11_libro_Java2.Excepciones_lista_tlfs;
 
 /////////////////////////////////////////////////////////////////
-// Definición de la clase CPersona
+// Definiciï¿½n de la clase CPersona
 //
 public class CPersona
 {
   // Atributos
   private String nombre;
-  private String dirección;
-  private long teléfono;
+  private String direccion;
+  private long telefono;
   
-  // Métodos
+  // Metodos
   public CPersona() {}
   public CPersona(String nom, String dir, long tel)
   {
     nombre = nom;
-    dirección = dir;
-    teléfono = tel;
+    direccion = dir;
+    telefono = tel;
   }
   
   public void asignarNombre(String nom)
@@ -29,23 +29,23 @@ public class CPersona
     return nombre;
   }
   
-  public void asignarDirección(String dir)
+  public void asignarDireccion(String dir)
   {
-    dirección = dir;
+    direccion = dir;
   }
   
-  public String obtenerDirección()
+  public String obtenerDireccion()
   {
-    return dirección;
+    return direccion;
   }
   
-  public void asignarTeléfono(long tel)
+  public void asignarTelefono(long tel)
   {
-    teléfono = tel;
+    telefono = tel;
   }
   
-  public long obtenerTeléfono()
+  public long obtenerTelefono()
   {
-    return teléfono;
+    return telefono;
   }
 }

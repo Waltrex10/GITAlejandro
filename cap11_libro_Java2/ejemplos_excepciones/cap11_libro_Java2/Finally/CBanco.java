@@ -7,18 +7,18 @@ package ejemplos_excepciones.cap11_libro_Java2.Finally;
 public class CBanco
 {
   private CCuenta[] clientes; // matriz de objetos
-  private int nElementos; // número de elementos de la matriz
+  private int nElementos; // nï¿½mero de elementos de la matriz
   
   public CBanco()
   {
-    // Crear una matriz vacía
+    // Crear una matriz vacï¿½a
     nElementos = 0;
     clientes = new CCuenta[nElementos];
   }
   
-  private void unElementoMás(CCuenta[] clientesActuales)
+  private void unElementoMes(CCuenta[] clientesActuales)
   {
-    nElementos = clientesActuales.length;    // Crear una matriz con un elemento más
+    nElementos = clientesActuales.length;    // Crear una matriz con un elemento mï¿½s
     clientes = new CCuenta[nElementos + 1];
     // Copiar los clientes que hay actualmente
     for ( int i = 0; i < nElementos; i++ )
@@ -45,7 +45,7 @@ public class CBanco
     if (i >= 0 && i < nElementos)
       clientes[i] = objeto;
     else
-      System.out.println("Índice fuera de límites");
+      System.out.println("ï¿½ndice fuera de lï¿½mites");
   }
   
   public CCuenta clienteEn( int i )
@@ -54,16 +54,16 @@ public class CBanco
       return clientes[i];
     else
     {
-      System.out.println("Índice fuera de límites");
+      System.out.println("ï¿½ndice fuera de lï¿½mites");
       return null;
     }
   }
   
   public int longitud() { return nElementos; }
   
-  public void añadir(CCuenta obj)
-  {    // Añadir un objeto a la matriz
-    unElementoMás(clientes);
+  public void anadir(CCuenta obj)
+  {    // Aï¿½adir un objeto a la matriz
+    unElementoMes(clientes);
     insertarCliente( nElementos - 1, obj );
   }
   
@@ -81,7 +81,7 @@ public class CBanco
   }
   
   public int buscar(String str, int pos)
-  {    // Buscar un objeto y devolver su posición
+  {    // Buscar un objeto y devolver su posiciï¿½n
     String nom, cuen;
     if (str == null) return -1;
     if (pos < 0) pos = 0;
@@ -89,13 +89,13 @@ public class CBanco
     {      // Buscar por el nombre
       nom = clientes[i].obtenerNombre();
       if (nom == null) continue;
-      // ¿str está contenida en nom?
+      // ï¿½str estï¿½ contenida en nom?
       if (nom.indexOf(str) > -1)
         return i;
       // Buscar por la cuenta
       cuen = clientes[i].obtenerCuenta();
       if (cuen == null) continue;
-      // ¿str está contenida en cuen?
+      // ï¿½str estï¿½ contenida en cuen?
       if (cuen.indexOf(str) > -1)
         return i;
     }
